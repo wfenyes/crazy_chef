@@ -112,6 +112,8 @@ while running:
             fruits.add(new_fruit)
             all_sprites.add(new_fruit)
 
+    
+
     #update player
     
     pressed_keys = pygame.key.get_pressed()
@@ -121,6 +123,12 @@ while running:
 
     fruits.update()
 
+    #collision control
+
+    if pygame.sprite.spritecollideany(player, fruits):
+        player.kill()
+        running = False
+    
     screen.fill((255, 255, 255))
 
     for entity in all_sprites:
