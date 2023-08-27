@@ -74,6 +74,9 @@ class Fruit(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.move_ip(0, 5)
+
+        if self.rect.centery == SCREEN_HEIGHT:
+            self.kill()
         
 
 
